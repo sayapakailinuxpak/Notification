@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.widget.Button"/>
+        <variable
+            name="mainActivity"
+            type="com.eldisprojectcodelabs.notification.MainActivity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <Button
+            android:id="@+id/button_notify_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notify Me"
+            android:onClick="@{mainActivity::setClickNotifyMe}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_update_me"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_update_me"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <Button
+            android:id="@+id/button_update_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Me"
+            android:onClick="@{mainActivity::setClickUpdateMe}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_cancel_me"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_notify_me"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <Button
+            android:id="@+id/button_cancel_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Me"
+            android:onClick="@{mainActivity::setClickCancelMe}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_update_me"
+            app:layout_constraintHorizontal_bias="0.893"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_update_me"
+            app:layout_constraintVertical_bias="0.499" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
